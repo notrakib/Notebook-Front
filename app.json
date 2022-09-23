@@ -1,0 +1,11 @@
+{
+  "name": "NativeFrontend",
+  "displayName": "NativeFrontend",
+
+  "expo": {
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": ["js", "jsx", "css"]
+    }
+  }
+}
