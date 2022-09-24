@@ -1,6 +1,4 @@
-.text {
-  margin: 10px;
-  border: 1px solid;
-  border-radius: 13px;
-  padding: 10px;
+.main {
+  height: 100%;
+  width: 100%;
 }

@@ -1,7 +1,7 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import AllToDo from '../toDo/allToDo';
-import ToDo from '../toDo/toDo';
 import ToDoList from '../toDo/toDoList';
+import EditToDo from '../toDo/editToDo';
 
 const ToDoNav = () => {
   const Stack = createNativeStackNavigator();
@@ -13,7 +13,7 @@ const ToDoNav = () => {
       }}>
       <Stack.Screen name="AllToDo" component={AllToDo} />
       <Stack.Screen name="ToDoList" component={ToDoList} />
-      <Stack.Screen name="EachToDo" component={ToDo} />
+      <Stack.Screen name="EditToDo" component={EditToDo} />
     </Stack.Navigator>
   );
 };

@@ -1,0 +1,25 @@
+.main {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 10px;
+}
+
+.checkBox {
+  align-self: flex-start;
+  margin-top: 0;
+}
+
+.text {
+  margin-top: 5px;
+  font-size: 14;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+}

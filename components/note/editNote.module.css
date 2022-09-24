@@ -1,6 +1,23 @@
-.text {
+.main {
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  margin-left: 10px;
+  font-size: 23;
+  font-weight: 500;
+  color: black;
+}
+
+.input {
   margin: 10px;
-  border: 1px solid;
-  border-radius: 13px;
-  padding: 10px;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.divider {
+  height: 5px;
+  width: 100%;
+  background-color: rgb(184, 3, 3);
 }
