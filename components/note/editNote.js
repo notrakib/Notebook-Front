@@ -1,9 +1,11 @@
 import {useState} from 'react';
 import {Button, ScrollView, Text, TextInput, View} from 'react-native';
 import styles from './editNote.module.css';
+import Share from './share';
 
 const EditNote = () => {
   const [btn, setbtn] = useState(false);
+  const [share, setshare] = useState(false);
 
   const note = {
     title: 'Akdum Bakdum',
@@ -31,7 +33,12 @@ const EditNote = () => {
           disabled={btn}
           color="rgb(184, 3, 3)"
           title="Save"></Button>
+        <Button
+          onPress={() => setshare(!share)}
+          color="blue"
+          title="Share"></Button>
       </View>
+      {share && <Share />}
     </ScrollView>
   );
 };

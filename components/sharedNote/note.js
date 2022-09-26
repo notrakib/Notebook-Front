@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import styles from './note.module.css';
 import Comment from './comment';
 
@@ -11,13 +11,24 @@ const Note = props => {
       onPress={() => {
         setComment(!comment);
       }}
-      style={styles.note}>
-      <Text>Shared by {props.note.sharedBy}</Text>
-      <Text>Shared To {props.note.sharedTo}</Text>
+      style={[styles.note, style.note]}>
+      <Text style={styles.title}>{props.note.title}</Text>
+      <View style={styles.share}>
+        <Text style={styles.from}>{props.note.sharedBy} </Text>
+        <Text style={styles.rndm}>to </Text>
+        <Text style={styles.to}>{props.note.sharedTo}</Text>
+      </View>
       <Text style={styles.text}>{props.note.note}</Text>
       {comment && <Comment />}
     </TouchableOpacity>
   );
 };
+
+const style = StyleSheet.create({
+  note: {
+    shadowColor: 'blue',
+    elevation: 3,
+  },
+});
 
 export default Note;

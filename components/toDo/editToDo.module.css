@@ -1,4 +1,6 @@
 .main {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
 }
@@ -11,42 +13,20 @@
   margin: 10px;
 }
 
-.cal {
-  font-size: 14;
-  font-weight: 400;
-  color: black;
-  text-align: center;
-  margin: 10px;
-  padding: 20px;
-}
-
-.date {
+.in {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 10px;
+  padding: 20px;
+  margin: 15px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  padding-top: 5px;
 }
 
-.start {
-  width: 115px;
-  height: 30px;
-  border-radius: 5px;
-  text-align: center;
-  padding-top: 4px;
-  font-size: 16;
-  font-weight: 400;
-  color: rgb(255, 255, 255);
-  background-color: rgb(14, 136, 3);
-}
-
-.end {
-  width: 115px;
-  height: 30px;
-  border-radius: 5px;
-  text-align: center;
-  padding-top: 4px;
-  font-size: 16;
-  font-weight: 400;
-  color: rgb(255, 255, 255);
-  background-color: rgb(136, 12, 3);
+.btn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }

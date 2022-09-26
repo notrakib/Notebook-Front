@@ -1,6 +1,35 @@
 .note {
   margin: 10px;
-  border: 1px solid;
-  border-radius: 13px;
-  padding: 10px;
+  padding: 17px;
+}
+
+.share {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.title {
+  font-size: 19;
+  font-weight: 500;
+  color: rgb(102, 5, 5);
+}
+
+.from {
+  font-size: 15;
+  font-weight: 500;
+  color: rgb(1, 96, 109);
+}
+
+.rndm {
+  font-size: 15;
+  font-weight: 500;
+  color: rgb(12, 13, 14);
+}
+
+.to {
+  font-size: 15;
+  font-weight: 500;
+  color: rgb(8, 165, 42);
 }

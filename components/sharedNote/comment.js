@@ -23,18 +23,21 @@ const Comment = () => {
 
   return (
     <View>
-      <View>
-        <TextInput
-          placeholder="Write your comment"
-          style={styles.text}></TextInput>
-        <Button title="Send"></Button>
+      <TextInput
+        multiline={true}
+        placeholder="Write your comment"
+        style={styles.text}></TextInput>
+      <View style={styles.btn}>
+        <Button style={styles.button} title="Send"></Button>
       </View>
-      <ScrollView>
+
+      <ScrollView style={styles.comment}>
         {comment.map((each, index) => {
           return (
-            <View key={index}>
-              <Text>{each.name}</Text>
-              <Text>{each.comment}</Text>
+            <View style={styles.index} key={index}>
+              <Text style={styles.name}>{each.name}</Text>
+              <Text style={styles.said}> said </Text>
+              <Text style={styles.cmnt}>"${each.comment}"</Text>
             </View>
           );
         })}

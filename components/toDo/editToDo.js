@@ -1,16 +1,19 @@
-import {
-  TextInput,
-  StyleSheet,
-  View,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
+import {TextInput, StyleSheet, View, Text, Button} from 'react-native';
 import styles from './editToDo.module.css';
-import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
-import {useState} from 'react';
+import {useRef, useState} from 'react';
+import CustomCalendar from './customCalendar';
+import StartDate from './startDate';
+import EndDate from './endDate';
+import SaveButton from './saveButton';
 
 const ToDo = () => {
-  const [showCal, setShowCal] = useState(false);
+  const [showCalLeft, setShowCalLeft] = useState(false);
+  const [showCalRight, setShowCalRight] = useState(false);
+  const [dateLeft, setdateLeft] = useState('0000-00-00');
+  const [dateRight, setdateRight] = useState('0000-00-00');
+  const [timeLeft, settimeLeft] = useState('00:00');
+  const [timeRight, settimeRight] = useState('00:00');
+  const txt = useRef();
 
   const toDo = {
     text: 'By default, when you navigate a screen in the nested navigator,',
@@ -18,36 +21,61 @@ const ToDo = () => {
     endAt: '3e4q2trfewqfedrfgv',
   };
 
-  const ShowCalHandaler = () => {
-    setShowCal(true);
-  };
-
   return (
     <View style={styles.main}>
       <TextInput
+        ref={txt}
         multiline={true}
         numberOfLines={4}
         style={[styles.sec, style.sec]}
-        onPress={() => {}}
         defaultValue={toDo.text}></TextInput>
-      <View style={[styles.cal, style.sec]}>
-        <View style={styles.date}>
-          <Text onPress={ShowCalHandaler} style={styles.start}>
-            Add Start Date
-          </Text>
-          <Text onPress={ShowCalHandaler} style={styles.end}>
-            Add End Date
-          </Text>
-        </View>
-        <View style={styles.date}>
-          <Text onPress={ShowCalHandaler} style={styles.start}>
-            Start Time
-          </Text>
-          <Text onPress={ShowCalHandaler} style={styles.end}>
-            End TIme
-          </Text>
-        </View>
-        {showCal && <Calendar />}
+      <View style={[styles.in, style.sec]}>
+        <StartDate
+          timeLeft={timeLeft}
+          dateLeft={dateLeft}
+          calHandaler={() => {
+            setShowCalLeft(true);
+            setShowCalRight(false);
+          }}
+          setTime={newText => {
+            settimeLeft(newText);
+          }}
+        />
+        <EndDate
+          timeRight={timeRight}
+          dateRight={dateRight}
+          calHandaler={() => {
+            setShowCalRight(true);
+            setShowCalLeft(false);
+          }}
+          setTime={newText => {
+            settimeRight(newText);
+          }}
+        />
+      </View>
+      {showCalLeft && (
+        <CustomCalendar
+          calHandaler={day => {
+            setdateLeft(day['dateString']);
+            setShowCalLeft(false);
+          }}
+        />
+      )}
+      {showCalRight && (
+        <CustomCalendar
+          calHandaler={day => {
+            setdateRight(day['dateString']);
+            setShowCalRight(false);
+          }}
+        />
+      )}
+      <View style={styles.btn}>
+        <SaveButton
+          dateLeft={dateLeft}
+          timeLeft={timeLeft}
+          dateRight={dateRight}
+          timeRight={timeRight}
+        />
       </View>
     </View>
   );
