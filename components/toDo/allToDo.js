@@ -1,5 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import AddButton from '../layout/addButton';
 import styles from './allToDo.module.css';
 
 const AllToDo = () => {
@@ -39,19 +40,22 @@ const AllToDo = () => {
   ];
 
   return (
-    <View style={styles.main}>
-      {toDo.map((each, index) => {
-        return (
-          <Text
-            style={[style.text, styles.text]}
-            key={index}
-            onPress={() => {
-              navigation.navigate('ToDoList');
-            }}>
-            {each.toDoTitle}
-          </Text>
-        );
-      })}
+    <View>
+      <ScrollView style={styles.main}>
+        {toDo.map((each, index) => {
+          return (
+            <Text
+              style={[style.text, styles.text]}
+              key={index}
+              onPress={() => {
+                navigation.navigate('ToDoList');
+              }}>
+              {each.toDoTitle}
+            </Text>
+          );
+        })}
+      </ScrollView>
+      <AddButton Navigate={() => navigation.navigate('CreateToDo')} />
     </View>
   );
 };

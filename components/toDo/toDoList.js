@@ -1,7 +1,12 @@
+import {useNavigation} from '@react-navigation/native';
 import {View, Text, StyleSheet} from 'react-native';
+import AddButton from '../layout/addButton';
 import EachToDo from './eachToDo';
+import styles from './toDoList.module.css';
 
 const ToDoList = () => {
+  const navigation = useNavigation();
+
   const toDo = [
     {
       text: 'By default, when you navigate a screen in the nested navigator,',
@@ -26,19 +31,13 @@ const ToDoList = () => {
   ];
 
   return (
-    <View>
+    <View style={styles.main}>
       {toDo.map((each, index) => {
         return <EachToDo key={index} toDo={each} />;
       })}
+      <AddButton Navigate={() => navigation.navigate('CreateToDoList')} />
     </View>
   );
 };
-
-const style = StyleSheet.create({
-  text: {
-    shadowColor: 'rgb(184, 3, 3)',
-    elevation: 3,
-  },
-});
 
 export default ToDoList;

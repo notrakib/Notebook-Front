@@ -1,0 +1,32 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.sec {
+  font-size: 14;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+  margin: 10px;
+}
+
+.in {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 15px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  padding-top: 5px;
+}
+
+.btn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

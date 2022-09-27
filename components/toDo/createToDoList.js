@@ -1,12 +1,12 @@
 import {TextInput, StyleSheet, View, Text, Button} from 'react-native';
+import styles from './editToDo.module.css';
 import {useRef, useState} from 'react';
 import CustomCalendar from './customCalendar';
-import StartDate from './startDate';
 import EndDate from './endDate';
 import SaveButton from './saveButton';
-import styles from './editToDo.module.css';
+import StartDate from './startDate';
 
-const ToDo = () => {
+const CreateToDoList = () => {
   const [showCalLeft, setShowCalLeft] = useState(false);
   const [showCalRight, setShowCalRight] = useState(false);
   const [dateLeft, setdateLeft] = useState('0000-00-00');
@@ -15,12 +15,6 @@ const ToDo = () => {
   const [timeRight, settimeRight] = useState('00:00');
   const txt = useRef();
 
-  const toDo = {
-    text: 'By default, when you navigate a screen in the nested navigator,',
-    startAt: 'wsedavgawdesgv',
-    endAt: '3e4q2trfewqfedrfgv',
-  };
-
   return (
     <View style={styles.main}>
       <TextInput
@@ -28,7 +22,7 @@ const ToDo = () => {
         multiline={true}
         numberOfLines={4}
         style={[styles.sec, style.sec]}
-        defaultValue={toDo.text}></TextInput>
+        placeholder="Enter your todo"></TextInput>
       <View style={[styles.in, style.sec]}>
         <StartDate
           timeLeft={timeLeft}
@@ -88,4 +82,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default ToDo;
+export default CreateToDoList;

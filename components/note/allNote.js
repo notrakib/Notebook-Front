@@ -1,5 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
-import {ScrollView} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
+import AddButton from '../layout/addButton';
 import styles from './allNote.module.css';
 import Note from './note';
 
@@ -30,11 +31,14 @@ const AllNote = () => {
   ];
 
   return (
-    <ScrollView style={styles.main}>
-      {note.map((each, index) => {
-        return <Note key={index} note={each} />;
-      })}
-    </ScrollView>
+    <View>
+      <ScrollView style={styles.main}>
+        {note.map((each, index) => {
+          return <Note key={index} note={each} />;
+        })}
+      </ScrollView>
+      <AddButton Navigate={() => navigation.navigate('WriteNote')} />
+    </View>
   );
 };
 
