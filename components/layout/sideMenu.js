@@ -1,13 +1,31 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Image, ScrollView, Text, View} from 'react-native';
+import {
+  Animated,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+import {useEffect, useRef} from 'react';
 import styles from './sideMenu.module.css';
 
 const SideMenu = props => {
   const navigation = useNavigation();
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(fadeAnim, {
+      toValue: 280,
+      duration: 500,
+      useNativeDriver: false,
+    }).start();
+  }, [fadeAnim]);
 
   return (
-    <View style={styles.menu}>
+    <Animated.View
+      style={{width: fadeAnim, backgroundColor: 'white', height: '100%'}}>
       <View style={styles.profile}>
         <Image style={styles.image} source={require('./c.jpeg')}></Image>
         <Text style={styles.name}>Rakibul Huda</Text>
@@ -39,7 +57,7 @@ const SideMenu = props => {
           Close
         </Text>
       </ScrollView>
-    </View>
+    </Animated.View>
   );
 };
 

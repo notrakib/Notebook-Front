@@ -16,7 +16,11 @@ const ToDoNav = () => {
       <Stack.Screen name="AllToDo" component={AllToDo} />
       <Stack.Screen name="CreateToDo" component={CreateToDo} />
       <Stack.Screen name="CreateToDoList" component={CreateToDoList} />
-      <Stack.Screen name="ToDoList" component={ToDoList} />
+      <Stack.Screen
+        name="ToDoList"
+        component={ToDoList}
+        options={{headerTitle: 'ToDo List'}}
+      />
       <Stack.Screen name="EditToDo" component={EditToDo} />
     </Stack.Navigator>
   );
