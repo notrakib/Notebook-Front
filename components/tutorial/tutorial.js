@@ -59,7 +59,7 @@ const Tutorial = () => {
             <Button
               color="rgb(184, 3, 3)"
               style={styles.btn}
-              onPress={() => navigation.navigate('AllNote')}
+              onPress={() => navigation.navigate('Note', {screen: 'AllNote'})}
               title="Next"></Button>
           )}
         </View>

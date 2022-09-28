@@ -28,7 +28,7 @@ const Comment = () => {
         placeholder="Write your comment"
         style={styles.text}></TextInput>
       <View style={styles.btn}>
-        <Button style={styles.button} title="Send"></Button>
+        <Button color="rgb(184, 3, 3)" title="Send"></Button>
       </View>
 
       <ScrollView style={styles.comment}>

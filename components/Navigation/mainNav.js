@@ -35,10 +35,9 @@ const MainNav = props => {
   return (
     <Stack.Navigator screenOptions={options}>
       <Stack.Screen name="Tutorial" component={Tutorial} />
-      <Stack.Screen name="AllNote" component={AllNote} />
-      <Stack.Screen name="ToDo" component={NavigatorToDo} />
       <Stack.Screen name="Note" component={NavigatorNote} />
       <Stack.Screen name="SharedNote" component={NavigatorSharedNote} />
+      <Stack.Screen name="To Do" component={NavigatorToDo} />
     </Stack.Navigator>
   );
 };

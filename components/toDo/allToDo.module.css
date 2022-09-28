@@ -5,6 +5,7 @@
 }
 
 .text {
+  border: 0px;
   font-size: 19;
   font-weight: 600;
   color: black;

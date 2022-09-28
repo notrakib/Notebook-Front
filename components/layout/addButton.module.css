@@ -2,13 +2,13 @@
   position: absolute;
   bottom: 8%;
   left: 80%;
-  font-size: 30;
+  font-size: 32;
   font-weight: 600;
   color: aliceblue;
   text-align: center;
   height: 50px;
   width: 50px;
   border-radius: 30px;
-  padding-top: 4px;
+  padding-top: 0px;
   background-color: brown;
 }

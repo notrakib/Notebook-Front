@@ -1,6 +1,7 @@
 .sec {
   display: flex;
   flex-direction: row;
+  border: 0px;
   margin: 15px;
   padding: 10px;
 }

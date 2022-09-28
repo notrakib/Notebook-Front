@@ -4,6 +4,7 @@ import SideMenu from './sideMenu';
 const CustomModal = props => {
   return (
     <Modal
+      style={{backgroundColor: 'white'}}
       animationIn="slideInLeft"
       animationOut="slideOutRight"
       transparent={true}

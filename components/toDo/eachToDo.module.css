@@ -5,6 +5,7 @@
 }
 
 .box {
+  border: 0px;
   display: flex;
   flex-direction: row;
   margin: 10px;
