@@ -1,5 +1,5 @@
 import {Text, TextInput, View} from 'react-native';
-import styles from './endDate.module.css';
+import styles from './css/endDate.module.css';
 
 const EndDate = props => {
   return (

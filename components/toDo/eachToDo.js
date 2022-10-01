@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
-import styles from './eachToDo.module.css';
+import styles from './css/eachToDo.module.css';
 
 const EachToDo = props => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);

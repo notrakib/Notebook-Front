@@ -1,19 +1,12 @@
-// import {createDrawerNavigator} from '@react-navigation/drawer';
-import React, {useState} from 'react';
+import 'react-native-gesture-handler';
+import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import MainNav from './components/Navigation/mainNav';
-import CustomModal from './components/layout/customModal';
+import DrawerNav from './components/Navigation/drawer';
 
 const App = () => {
-  const [modalVisible, setModalVisible] = useState(false);
-
   return (
     <NavigationContainer>
-      <CustomModal
-        SideMenuHandaler={() => setModalVisible(!modalVisible)}
-        modalVisible={modalVisible}
-      />
-      <MainNav SideMenuHandaler={() => setModalVisible(!modalVisible)} />
+      <DrawerNav />
     </NavigationContainer>
   );
 };

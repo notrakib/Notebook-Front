@@ -1,7 +1,8 @@
 import {useNavigation} from '@react-navigation/native';
 import {useState} from 'react';
-import {Button, Image, Text, View} from 'react-native';
-import styles from './tutorial.module.css';
+import {Button, Text, View} from 'react-native';
+import styles from './css/tutorial.module.css';
+
 const Tutorial = () => {
   const [tutorial, setTutorial] = useState(0);
   const navigation = useNavigation();
@@ -36,7 +37,7 @@ const Tutorial = () => {
 
   return (
     <View style={styles.main}>
-      <Image style={styles.image} source={require('./back.jpg')}></Image>
+      {/* <Image style={styles.image} source={require('./back.jpg')}></Image> */}
       <View style={styles.text}>
         <Text style={styles.title}>{tutorialArray[tutorial].title}</Text>
         <Text style={styles.desc}>{tutorialArray[tutorial].description}</Text>
@@ -59,7 +60,7 @@ const Tutorial = () => {
             <Button
               color="rgb(184, 3, 3)"
               style={styles.btn}
-              onPress={() => navigation.navigate('Note', {screen: 'AllNote'})}
+              onPress={() => navigation.navigate('Notes', {screen: 'Note'})}
               title="Next"></Button>
           )}
         </View>

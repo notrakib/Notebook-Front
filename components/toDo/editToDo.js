@@ -4,7 +4,7 @@ import CustomCalendar from './customCalendar';
 import StartDate from './startDate';
 import EndDate from './endDate';
 import SaveButton from './saveButton';
-import styles from './editToDo.module.css';
+import styles from './css/editToDo.module.css';
 
 const ToDo = () => {
   const [showCalLeft, setShowCalLeft] = useState(false);

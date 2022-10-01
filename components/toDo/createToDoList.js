@@ -1,5 +1,5 @@
 import {TextInput, StyleSheet, View, Text, Button} from 'react-native';
-import styles from './editToDo.module.css';
+import styles from './css/editToDo.module.css';
 import {useRef, useState} from 'react';
 import CustomCalendar from './customCalendar';
 import EndDate from './endDate';

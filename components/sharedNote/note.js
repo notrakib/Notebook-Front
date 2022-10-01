@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import styles from './note.module.css';
+import styles from './css/note.module.css';
 import Comment from './comment';
 
 const Note = props => {

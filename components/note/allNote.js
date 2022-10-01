@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
-import {ScrollView, Text, View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import AddButton from '../layout/addButton';
-import styles from './allNote.module.css';
+import styles from './css/allNote.module.css';
 import Note from './note';
 
 const AllNote = () => {

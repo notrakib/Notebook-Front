@@ -1,5 +1,5 @@
 import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
-import styles from './share.module.css';
+import styles from './css/share.module.css';
 
 const Share = () => {
   return (

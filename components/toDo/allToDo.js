@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import AddButton from '../layout/addButton';
-import styles from './allToDo.module.css';
+import styles from './css/allToDo.module.css';
 
 const AllToDo = () => {
   const navigation = useNavigation();

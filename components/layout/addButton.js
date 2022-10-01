@@ -1,5 +1,5 @@
 import {Text} from 'react-native';
-import styles from './addButton.module.css';
+import styles from './css/addButton.module.css';
 
 const AddButton = props => {
   return (

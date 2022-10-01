@@ -1,5 +1,5 @@
 import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
-import styles from './customCalender.module.css';
+import styles from './css/customCalender.module.css';
 
 const CustomCalendar = props => {
   return (

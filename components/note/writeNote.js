@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {Button, ScrollView, TextInput, View} from 'react-native';
-import styles from './writeNote.module.css';
+import styles from './css/writeNote.module.css';
 
 const WriteNote = () => {
   const [btn, setbtn] = useState(false);

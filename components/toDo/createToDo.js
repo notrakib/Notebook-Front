@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import {Button, StyleSheet, TextInput, View} from 'react-native';
-import styles from './createToDo.module.css';
+import styles from './css/createToDo.module.css';
 
 const CreateToDo = () => {
   const navigation = useNavigation();

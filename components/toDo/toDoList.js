@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import {View, Text, StyleSheet} from 'react-native';
 import AddButton from '../layout/addButton';
 import EachToDo from './eachToDo';
-import styles from './toDoList.module.css';
+import styles from './css/toDoList.module.css';
 
 const ToDoList = () => {
   const navigation = useNavigation();

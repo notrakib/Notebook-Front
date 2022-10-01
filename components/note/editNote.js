@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {Button, ScrollView, Text, TextInput, View} from 'react-native';
-import styles from './editNote.module.css';
+import styles from './css/editNote.module.css';
 import Share from './share';
 
 const EditNote = () => {

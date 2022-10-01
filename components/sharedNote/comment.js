@@ -1,5 +1,5 @@
 import {Button, ScrollView, Text, TextInput, View} from 'react-native';
-import styles from './comment.module.css';
+import styles from './css/comment.module.css';
 
 const Comment = () => {
   const comment = [
