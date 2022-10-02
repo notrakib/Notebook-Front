@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import {useState} from 'react';
-import {Button, Text, View} from 'react-native';
+import {Button, Image, Text, View} from 'react-native';
 import styles from './css/tutorial.module.css';
 
 const Tutorial = () => {
@@ -37,7 +37,9 @@ const Tutorial = () => {
 
   return (
     <View style={styles.main}>
-      {/* <Image style={styles.image} source={require('./back.jpg')}></Image> */}
+      <Image
+        style={styles.image}
+        source={require('../images/back.jpg')}></Image>
       <View style={styles.text}>
         <Text style={styles.title}>{tutorialArray[tutorial].title}</Text>
         <Text style={styles.desc}>{tutorialArray[tutorial].description}</Text>

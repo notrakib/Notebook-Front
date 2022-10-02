@@ -9,3 +9,17 @@
   padding: 0px;
   background-color: rgb(189, 1, 1);
 }
+
+.menu {
+  height: 35px;
+  width: 60px;
+  color: white;
+}
+
+.title {
+  font-size: 24;
+  padding-top: 0px;
+  font-weight: 600;
+  padding-bottom: 3px;
+  color: white;
+}

@@ -1,12 +1,13 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import NoteNav from './noteNav';
 import SharedNoteNav from './sharedNoteNav';
+import CustomTab from '../layout/customTab';
 
 const TabNote = () => {
   const Tab = createBottomTabNavigator();
 
   return (
-    <Tab.Navigator sceneContainerStyle>
+    <Tab.Navigator tabBar={props => <CustomTab {...props} />}>
       <Tab.Screen
         name="Note"
         component={NoteNav}
