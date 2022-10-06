@@ -10,8 +10,7 @@ const SaveButton = props => {
         props.dateRight === '0000-00-00'
           ? (eDate = null)
           : (eDate = new Date(`${props.dateRight}T${props.timeRight}`));
-
-        console.log(sDate, eDate);
+        props.saveHandaler();
       }}
       color="blue"
       title="Save"></Button>

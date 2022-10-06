@@ -1,41 +1,32 @@
-import {useNavigation} from '@react-navigation/native';
-import {View, Text, StyleSheet} from 'react-native';
+import {useNavigation, useRoute} from '@react-navigation/native';
+import {useEffect, useState} from 'react';
+import {View} from 'react-native';
+import {FetchTaskLists} from '../api/Tasks';
 import AddButton from '../layout/addButton';
 import EachToDo from './eachToDo';
 import styles from './css/toDoList.module.css';
 
 const ToDoList = () => {
+  const [taskLists, setTaskLists] = useState([]);
   const navigation = useNavigation();
+  const route = useRoute();
 
-  const toDo = [
-    {
-      text: 'By default, when you navigate a screen in the nested navigator,',
-      startAt: 'wsedavgawdesgv',
-      endAt: '3e4q2trfewqfedrfgv',
-    },
-    {
-      text: 'By default, when you navigate a screen in the nested navigator,',
-      startAt: 'wsedavgawdesgv',
-      endAt: '3e4q2trfewqfedrfgv',
-    },
-    {
-      text: 'By default, when you navigate a screen in the nested navigator,',
-      startAt: 'wsedavgawdesgv',
-      endAt: '3e4q2trfewqfedrfgv',
-    },
-    {
-      text: 'By default, when you navigate a screen in the nested navigator,',
-      startAt: 'wsedavgawdesgv',
-      endAt: '3e4q2trfewqfedrfgv',
-    },
-  ];
+  useEffect(() => {
+    FetchTaskLists(route.params.taskId)
+      .then(taskList => setTaskLists(taskList))
+      .catch();
+  }, []);
 
   return (
     <View style={styles.main}>
-      {toDo.map((each, index) => {
+      {taskLists.map((each, index) => {
         return <EachToDo key={index} toDo={each} />;
       })}
-      <AddButton Navigate={() => navigation.navigate('CreateToDoList')} />
+      <AddButton
+        Navigate={() =>
+          navigation.navigate('CreateToDoList', {taskId: route.params.taskId})
+        }
+      />
     </View>
   );
 };

@@ -9,7 +9,7 @@ const CustomTab = () => {
     <View style={styles.main}>
       <View style={styles.btn}>
         <TouchableHighlight
-          underlayColor="#017d01"
+          underlayColor="#ff697d"
           onPress={() => navigation.navigate('Note')}>
           <View style={styles.option}>
             <Image
@@ -20,9 +20,11 @@ const CustomTab = () => {
         </TouchableHighlight>
       </View>
 
+      <View style={styles.divider}></View>
+
       <View style={styles.btn}>
         <TouchableHighlight
-          underlayColor="#017d01"
+          underlayColor="#ff697d"
           onPress={() => navigation.navigate('Share Note')}>
           <View style={styles.option}>
             <Image

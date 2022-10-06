@@ -5,13 +5,11 @@
 }
 
 .text {
-  border: 0px;
   font-size: 19;
   font-weight: 600;
   color: black;
   text-align: center;
   margin: 10px;
-  padding: 10px;
 }
 
 .btn {
@@ -27,4 +25,23 @@
   border-radius: 30px;
   padding-top: 4px;
   background-color: brown;
+}
+
+.dlt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 10px;
+  border: 0px;
+  margin-bottom: 10px;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+}
+
+.press {
+  align-self: center;
 }

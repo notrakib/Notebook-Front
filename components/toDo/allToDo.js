@@ -1,57 +1,52 @@
 import {useNavigation} from '@react-navigation/native';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {useEffect, useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Image,
+  Pressable,
+} from 'react-native';
 import AddButton from '../layout/addButton';
+import {DeleteTask, FetchAllTasks} from '../api/Tasks';
 import styles from './css/allToDo.module.css';
 
 const AllToDo = () => {
+  const [tasks, setTasks] = useState([]);
   const navigation = useNavigation();
 
-  const toDo = [
-    {
-      toDoTitle: 'asdfvcasdwefvc',
-      status: 'Open',
-      createdAt: 'asfcdas',
-      endedAt: '23erf',
-    },
-    {
-      toDoTitle: 'asdfvcasdwefvc',
-      status: 'Open',
-      createdAt: 'asfcdas',
-      endedAt: '23erf',
-    },
-    {
-      toDoTitle: 'asdfvcasdwefvc',
-      status: 'Open',
-      createdAt: 'asfcdas',
-      endedAt: '23erf',
-    },
-    {
-      toDoTitle: 'asdfvcasdwefvc',
-      status: 'Open',
-      createdAt: 'asfcdas',
-      endedAt: '23erf',
-    },
-    {
-      toDoTitle: 'asdfvcasdwefvc',
-      status: 'Open',
-      createdAt: 'asfcdas',
-      endedAt: '23erf',
-    },
-  ];
+  useEffect(() => {
+    FetchAllTasks()
+      .then(tasks => setTasks(tasks))
+      .catch();
+  }, []);
 
   return (
     <View>
       <ScrollView style={styles.main}>
-        {toDo.map((each, index) => {
+        {tasks.map((each, index) => {
           return (
-            <Text
-              style={[style.text, styles.text]}
-              key={index}
-              onPress={() => {
-                navigation.navigate('ToDoList');
-              }}>
-              {each.toDoTitle}
-            </Text>
+            <View key={index} style={[style.dlt, styles.dlt]}>
+              <Text
+                style={styles.text}
+                onPress={() => {
+                  navigation.navigate('ToDoList', {taskId: each._id});
+                }}>
+                {each.toDoTitle}
+              </Text>
+              <Pressable
+                style={styles.press}
+                onPress={() =>
+                  DeleteTask(each._id)
+                    .then(() => navigation.goBack())
+                    .catch()
+                }>
+                <Image
+                  style={styles.icon}
+                  source={require('../images/icons8-delete-96.png')}></Image>
+              </Pressable>
+            </View>
           );
         })}
       </ScrollView>
@@ -61,7 +56,7 @@ const AllToDo = () => {
 };
 
 const style = StyleSheet.create({
-  text: {
+  dlt: {
     shadowColor: 'rgb(184, 3, 3)',
     elevation: 3,
   },

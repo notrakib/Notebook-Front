@@ -48,7 +48,9 @@ const AllNote = () => {
 
   return (
     <View>
-      <ScrollView style={styles.main}>
+      <ScrollView
+        // onScroll={event => console.log(event.nativeEvent.contentOffset.y)}
+        style={styles.main}>
         {note.map((each, index) => {
           return <Note key={index} note={each} />;
         })}
