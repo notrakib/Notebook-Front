@@ -8,7 +8,12 @@ const Note = props => {
   return (
     <View>
       <TouchableOpacity
-        onPress={() => navigation.navigate('EditNote')}
+        onPress={() =>
+          navigation.navigate('EditNote', {
+            note: props.note,
+            index: props.index,
+          })
+        }
         style={[styles.sec, style.sec]}>
         <View style={styles.sidebar}></View>
         <View style={styles.text}>

@@ -1,14 +1,18 @@
-.btn {
+.main {
   position: absolute;
   bottom: 8%;
   left: 80%;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background-color: brown;
+  border: 0px;
+}
+
+.btn {
   font-size: 32;
   font-weight: 600;
   color: aliceblue;
   text-align: center;
-  height: 50px;
-  width: 50px;
-  border-radius: 30px;
-  padding-top: 2px;
-  background-color: brown;
+  padding-top: 3px;
 }
