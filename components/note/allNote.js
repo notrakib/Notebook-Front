@@ -7,6 +7,7 @@ import AddButton from '../layout/addButton';
 import styles from './css/allNote.module.css';
 import Note from './note';
 import global from '../../global';
+import {SendFile} from '../api/Note';
 
 const AllNote = () => {
   const [note, setNote] = useState([]);
@@ -32,29 +33,13 @@ const AllNote = () => {
     DocumentPicker.pickSingle({
       type: [DocumentPicker.types.allFiles],
     })
-      .then(res => {
+      .then(file => {
         const formData = new FormData();
-        formData.append('title', 'adwsdfawd');
-        formData.append('file', res);
-        console.log(formData);
+        formData.append('file', file);
 
-        fetch(`${global.Base_URL}/post-note`, {
-          method: 'POST',
-          body: formData,
-          // headers: {
-          //   'Content-Type': 'multipart/form-data; ',
-          // },
-        })
-          .then(res => {
-            return res.json();
-          })
-          .then(returnObj => {
-            if (returnObj.error) {
-            } else {
-              return returnObj;
-            }
-          })
-          .catch(err => console.log(err));
+        SendFile(formData)
+          .then(res => console.log(res))
+          .catch();
       })
       .catch(err => {
         if (DocumentPicker.isCancel(err)) {
@@ -63,45 +48,6 @@ const AllNote = () => {
           alert('Unknown Error: ' + JSON.stringify(err));
         }
       });
-
-    // DocumentPicker.pickSingle({
-    //   type: [DocumentPicker.types.allFiles],
-    // })
-    //   .then(res => {
-    //     console.log(res);
-    //     RNFS.uploadFiles({
-    //       toUrl: 'http://10.0.2.2:8080/post-note',
-    //       files: {
-    //         name: res.name,
-    //         filename: res.name,
-    //         filepath: res.uri,
-    //         filetype: res.type,
-    //       },
-    //       method: 'POST',
-    //       headers: {
-    //         'Content-Type': 'multipart/form-data; ',
-    //       },
-    //       begin: () => {
-    //         console.log('File Uploading Started...');
-    //       },
-    //       progress: response => {
-    //         var percentage = Math.floor(
-    //           (response.totalBytesSent / response.totalBytesExpectedToSend) *
-    //             100,
-    //         );
-    //         console.log('UPLOAD IS ' + percentage + '% DONE!');
-    //       },
-    //     })
-    //       .then(res => console.log(res))
-    //       .catch(err => console.log(err));
-    //   })
-    //   .catch(err => {
-    //     if (DocumentPicker.isCancel(err)) {
-    //       alert('Canceled from single doc picker');
-    //     } else {
-    //       alert('Unknown Error: ' + JSON.stringify(err));
-    //     }
-    //   });
   };
 
   return (

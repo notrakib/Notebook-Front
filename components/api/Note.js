@@ -6,12 +6,10 @@ const SendFile = async formData => {
     body: formData,
   })
     .then(res => {
-      console.log(res);
       return res.json();
     })
     .then(returnObj => {
       if (returnObj.error) {
-        console.log(returnObj.error);
       } else {
         return returnObj;
       }
