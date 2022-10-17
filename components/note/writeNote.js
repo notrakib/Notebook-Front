@@ -17,11 +17,8 @@ const WriteNote = () => {
       return;
     }
 
-    RNFS.readDir(RNFS.DocumentDirectoryPath)
-      .then(() => {
-        const path = RNFS.DocumentDirectoryPath + '/rakibulhuda3.txt';
-        return Promise.all([RNFS.stat(path), path]);
-      })
+    const path = RNFS.DocumentDirectoryPath + '/rakibulhuda3.txt';
+    Promise.all([RNFS.stat(path), path])
       .then(statResult => {
         return RNFS.readFile(statResult[1]);
       })
@@ -36,7 +33,6 @@ const WriteNote = () => {
         return note;
       })
       .then(note => {
-        const path = RNFS.DocumentDirectoryPath + '/rakibulhuda3.txt';
         return RNFS.writeFile(path, JSON.stringify(note), 'utf8');
       })
       .catch();

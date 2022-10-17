@@ -7,18 +7,15 @@ import AddButton from '../layout/addButton';
 import styles from './css/allNote.module.css';
 import Note from './note';
 import global from '../../global';
-import {SendFile} from '../api/Note';
+import {FetchNote, SendNote} from '../api/Note';
 
 const AllNote = () => {
   const [note, setNote] = useState([]);
   const navigation = useNavigation();
 
   useEffect(() => {
-    RNFS.readDir(RNFS.DocumentDirectoryPath)
-      .then(() => {
-        const path = RNFS.DocumentDirectoryPath + '/rakibulhuda3.txt';
-        return Promise.all([RNFS.stat(path), path]);
-      })
+    const path = RNFS.DocumentDirectoryPath + '/rakibulhuda3.txt';
+    Promise.all([RNFS.stat(path), path])
       .then(statResult => {
         return RNFS.readFile(statResult[1]);
       })
@@ -29,25 +26,16 @@ const AllNote = () => {
       .catch();
   }, []);
 
-  const Test = () => {
-    DocumentPicker.pickSingle({
-      type: [DocumentPicker.types.allFiles],
-    })
-      .then(file => {
-        const formData = new FormData();
-        formData.append('file', file);
+  const NoteFetchHandaler = () => {
+    FetchNote()
+      .then(res => console.log(res))
+      .catch();
+  };
 
-        SendFile(formData)
-          .then(res => console.log(res))
-          .catch();
-      })
-      .catch(err => {
-        if (DocumentPicker.isCancel(err)) {
-          alert('Canceled from single doc picker');
-        } else {
-          alert('Unknown Error: ' + JSON.stringify(err));
-        }
-      });
+  const NoteSendHandaler = () => {
+    SendNote(JSON.stringify(note))
+      .then(res => console.log(res))
+      .catch();
   };
 
   return (
@@ -59,8 +47,8 @@ const AllNote = () => {
           return <Note key={index} note={each} index={index} />;
         })}
       </ScrollView>
-      {/* <AddButton Navigate={() => navigation.navigate('WriteNote')} /> */}
-      <AddButton Navigate={Test} />
+      <AddButton Navigate={() => navigation.navigate('WriteNote')} />
+      {/* <AddButton Navigate={Test} /> */}
     </View>
   );
 };
