@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "667369973571",
+    "project_id": "sen-auth-1890c",
+    "storage_bucket": "sen-auth-1890c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667369973571:android:6b12db840c7f4e8148b1f6",
+        "android_client_info": {
+          "package_name": "com.nativefrontend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667369973571-toib72837saogqa6lhhkrte9qbjvd34g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nativefrontend",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "667369973571-k05cslsu3d0hdt9rh004q2glri5t4hms.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABEYq3S_huZGAfgfwaPhiil2iKAdAzM6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667369973571-k05cslsu3d0hdt9rh004q2glri5t4hms.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

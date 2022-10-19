@@ -63,7 +63,16 @@ const EditNote = () => {
           color="blue"
           title="Share"></Button>
       </View>
-      {share && <Share />}
+      {share && (
+        <Share
+          share_note={{
+            fromShared: 'wsad',
+            title: route.params.note.title,
+            note: route.params.note.note,
+            sharedAt: 'Dhaka',
+          }}
+        />
+      )}
     </ScrollView>
   );
 };

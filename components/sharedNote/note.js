@@ -4,22 +4,22 @@ import styles from './css/note.module.css';
 import Comment from './comment';
 
 const Note = props => {
-  const [comment, setComment] = useState(false);
+  const [showComment, setShowComment] = useState(false);
 
   return (
     <TouchableOpacity
       onPress={() => {
-        setComment(!comment);
+        setShowComment(!showComment);
       }}
       style={[styles.note, style.note]}>
       <Text style={styles.title}>{props.note.title}</Text>
       <View style={styles.share}>
-        <Text style={styles.from}>{props.note.sharedBy} </Text>
+        <Text style={styles.from}>{props.note.fromShared.split('@')[0]} </Text>
         <Text style={styles.rndm}>to </Text>
-        <Text style={styles.to}>{props.note.sharedTo}</Text>
+        <Text style={styles.to}>{props.note.toShared.split('@')[0]}</Text>
       </View>
       <Text style={styles.text}>{props.note.note}</Text>
-      {comment && <Comment />}
+      {showComment && <Comment comment={props.note} />}
     </TouchableOpacity>
   );
 };
